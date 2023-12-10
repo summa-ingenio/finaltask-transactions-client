@@ -1,0 +1,49 @@
+/* UserList.css */
+
+.user-table-container {
+  width: 80%;
+  margin: 0 auto; /* Centers the table */
+}
+
+table {
+  width: 100%; /* Table takes full width of the container */
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+
+th,
+td {
+  text-align: left;
+  padding: 8px;
+}
+
+th {
+  background-color: #4caf50;
+  color: white;
+}
+
+td {
+  border-bottom: 1px solid #ddd;
+}
+
+tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+
+.users-title {
+  padding-top: 20px;
+}
+
+.user-button-container {
+  text-align: center; /* Center the button container */
+  margin-top: 20px; /* Add space above the button */
+  width: 30%;
+  align-items: center;
+}
+
+.users-button {
+  padding: 10px 20px; /* Add padding inside the button for better dimensions */
+  font-size: 16px; /* Increase font size for better visibility */
+  cursor: pointer; /* Change cursor to pointer when hovering over the button */
+  background-color: #011e32;
+}

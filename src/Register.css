@@ -1,4 +1,5 @@
 /* Register.css */
+
 .registration-container {
   width: 100%;
   height: 100vh;
@@ -11,6 +12,11 @@
 
 .logo-register {
   width: 260px;
+}
+.register-p {
+  color: white;
+  padding-bottom: 25px;
+  font-size: 18px;
 }
 
 .form {

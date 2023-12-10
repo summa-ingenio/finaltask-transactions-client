@@ -179,4 +179,13 @@ The application is deployed on Heroku. Both the front end and back end are deplo
 
 For a production deployment, consider securing sensitive information, implementing HTTPS, and other security best practices.
 
+### Admin
+
+Please note that for this task we have an admin dashboard which will allow you to view all the registered users of the aplication.
+
+To test the admin dashboard please use the following details:
+
+Username: caleb@gmail.com
+Password: test
+
 ## Deployment URL

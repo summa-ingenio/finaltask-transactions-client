@@ -47,6 +47,7 @@ const Register = () => {
     <div className="registration-container">
       <img src={Logo} alt="Logo" className="logo-register" />
       <h2 className="title-h2">Register</h2>
+      <p className="register-p">Please use a gmail.com address to register</p>
       <div className="form">
         <label htmlFor="username">Username:</label>
         <input

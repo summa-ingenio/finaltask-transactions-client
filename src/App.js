@@ -1,10 +1,11 @@
 import React from "react";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import MenuBar from "./components/MenuBar";
-import Home from "./components/home"; // Make sure the component name is correctly capitalized
-import Login from "./components/login"; // Make sure the component name is correctly capitalized
+import Home from "./components/home";
+import Login from "./components/login";
 import Register from "./components/Register";
-import Todo from "./components/ToDoList"; // Make sure the component name is correctly capitalized
+import Todo from "./components/ToDoList";
+import Users from "./components/users";
 
 function App() {
   return (
@@ -14,6 +15,7 @@ function App() {
         <Route path="/login" element={<Login />} />
         <Route path="/register" element={<Register />} />
         <Route path="/transactions" element={<Todo />} />
+        <Route path="/users" element={<Users />} />
       </Routes>
     </Router>
   );

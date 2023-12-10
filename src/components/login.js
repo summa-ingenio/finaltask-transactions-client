@@ -33,7 +33,13 @@ const Login = () => {
       localStorage.setItem("token", token);
       localStorage.setItem("username", loggedInUsername);
 
-      navigate("/transactions");
+      // Check if the logged-in user is "caleb@gmail.com"
+      if (loggedInUsername === "caleb@gmail.com") {
+        navigate("/users");
+      } else {
+        // Redirect to the main application page for other users
+        navigate("/transactions");
+      }
     } catch (error) {
       console.error(
         "Login failed",
