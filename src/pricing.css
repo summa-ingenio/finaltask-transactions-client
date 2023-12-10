@@ -1,0 +1,42 @@
+/* ArbitrageComponent.css */
+
+.pricing {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-items: center;
+  margin-top: 80px;
+  margin-bottom: -30px;
+}
+
+.card {
+  background-color: #ffffff;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  transition: transform 0.3s ease-in-out;
+  flex: 1; /* Each card takes equal width */
+  margin: 0 10px; /* Add some spacing between cards */
+
+  /* Responsive Styling */
+  @media (max-width: 768px) {
+    flex: 100%; /* Take up full width on smaller screens */
+  }
+}
+
+.card:hover {
+  transform: translateY(-5px);
+}
+
+h2 {
+  color: #333333;
+  margin-bottom: 15px;
+  font-size: 20px;
+}
+
+p {
+  color: #555555;
+  font-size: 18px;
+  margin: 0;
+}

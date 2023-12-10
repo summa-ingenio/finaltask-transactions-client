@@ -1,0 +1,38 @@
+/* Home.css */
+body.home-page {
+  background-color: #011e32;
+}
+
+.home-container {
+  width: 80%;
+  max-width: 400px;
+  margin: 50px auto;
+  padding: 20px;
+  text-align: center;
+}
+
+.logo-home {
+  height: 250px; /* Adjust the height of the logo as needed */
+}
+
+.title-h2 {
+  margin-bottom: 20px;
+  color: #fff;
+}
+.p-home {
+  color: #fff;
+  margin-bottom: 20px;
+}
+.home-container button {
+  background-color: #007bff;
+  color: #fff;
+  padding: 10px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+.home-container button:hover {
+  background-color: #0056b3;
+}

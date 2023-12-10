@@ -1,0 +1,88 @@
+/* TransactionsTable.css */
+
+.todo-list-container .transactions-container {
+  width: 80%;
+  max-width: 800px;
+  margin: 50px auto;
+  padding: 20px;
+  text-align: center;
+  background-color: #fff; /* Optional: for better readability */
+  border-radius: 8px; /* Optional: for styled corners */
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Optional: to add a subtle shadow */
+}
+
+.todo-list-container .transactions-table {
+  width: 100%;
+  border-collapse: collapse; /* Collapses the border lines between cells */
+  margin-top: 20px; /* Adjusted to add space above the table */
+}
+
+.transactions-table th,
+.transactions-table td {
+  border: 1px solid #dee2e6; /* Adds borders to the cells */
+  padding: 8px; /* Adds padding within the cells */
+  text-align: left; /* Aligns text to the left */
+}
+
+.transactions-table th {
+  background-color: #f8f9fa; /* Adds a background color to the header row */
+}
+
+.trans-input {
+  background-color: #f2f2f2; /* Optional: Zebra striping for rows */
+  color: black;
+}
+.trans-label {
+  color: black;
+  padding-right: 5px;
+}
+.trans-select {
+  margin: 10px;
+}
+.trans-button {
+  width: 30%;
+}
+
+.todo-list-container .button-container {
+  display: flex;
+  justify-content: center;
+}
+
+.todo-list-container button {
+  background-color: #28a745;
+  color: #fff;
+  padding: 10px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-right: 10px;
+}
+
+.todo-list-container button:hover {
+  background-color: #218838;
+}
+
+.todo-list-container button.edit-button {
+  background-color: #007bff;
+}
+
+.todo-list-container button.delete-button {
+  background-color: #dc3545;
+}
+
+.todo-list-container button.edit-button,
+button.delete-button {
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  padding: 5px 8px; /* Adjust padding for better fit in table */
+  margin: 0 5px; /* Adjust margin for better fit in table */
+}
+
+.todo-list-container button.edit-button:hover,
+button.delete-button:hover {
+  opacity: 0.8; /* Adds a hover effect for the buttons */
+}
+.todo-list-container .title-trans {
+  color: black;
+}

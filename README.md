@@ -1,70 +1,182 @@
-# Getting Started with Create React App
+# Bitcoin Arbitrage Rate Application
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## What is Arbitrage Rate?
 
-## Available Scripts
+### Overview
 
-In the project directory, you can run:
+Arbitrage rate refers to the percentage difference in the price of a financial instrument, such as Bitcoin, between two markets. In the context of this application, we focus on the arbitrage rate between Bitcoin prices in the United States and South Africa.
 
-### `npm start`
+### Understanding Arbitrage
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+Arbitrage is a trading strategy that takes advantage of price discrepancies for the same asset in different markets. Traders seek to profit from these differences by buying the asset in the market where it is priced lower and selling it in the market where it is priced higher.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+### Bitcoin Arbitrage Rate
 
-### `npm test`
+The Bitcoin Arbitrage Rate is a key metric calculated as follows:
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+\[ \text{Arbitrage Rate} = \left( \frac{\text{Price in Market A} - \text{Price in Market B}}{\text{Price in Market B}} \right) \times 100 \]
 
-### `npm run build`
+- If the arbitrage rate is positive, it indicates an opportunity for profit.
+- If the arbitrage rate is negative, it implies a potential loss.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### How Users Benefit
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+For users of this application, monitoring the Bitcoin arbitrage rate provides valuable insights into market trends and potential opportunities for trading. Users can make informed decisions on when to buy or sell Bitcoin based on real-time data, maximizing their potential profits.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## System Architecture
 
-### `npm run eject`
+### Web Stack
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+The application will be developed using the following web stack:
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+- **Frontend Framework**: React.js
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+  - I will use Create React App (CRA) for its simplicity and quick setup, enabling a faster development process.
+  - Styling will be done using Styled Components for a modular and maintainable styling approach. Global CSS files will be used to style multiple components.
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+- **Backend Framework**: Express.js
 
-## Learn More
+  - Express.js is chosen for its lightweight and flexible nature, making it suitable for building RESTful APIs.
+  - MongoDB will be used as the database for its scalability and ease of integration with Node.js.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+- **Database**: MongoDB
+  - MongoDB is selected as the database due to its flexibility with JSON-like documents, which aligns well with the nature of the data in this application.
 
 ### Deployment
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+The application will be deployed using a cloud platform, such as Heroku, to ensure scalability and availability. Continuous integration and continuous deployment allows us to utilise test branches before pushing the application to the main branch for deployment.
 
-### `npm run build` fails to minify
+## System Requirements Specification
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+### Overview
+
+The Bitcoin Arbitrage Rate Application aims to provide users with real-time information about the arbitrage rates between Bitcoin prices in the United States of America and South Africa. Users can register, log in, and manage their transactions.
+
+### User Stories
+
+1. **User Information**
+
+   - As a new user, I want to be able to quickly determin the arbitrage rate between the 2 currencies.
+
+2. **User Login**
+
+   - As a registered user, I want to log in to my account securely to view my own transactions.
+
+3. **View Arbitrage Rates**
+
+   - As a user, I want to view the current Bitcoin arbitrage rate between the United States of America and South Africa.
+
+4. **Add Transactions**
+
+   - As a user, I want to add my Bitcoin transactions, including the purchase price and date and abitrage rate.
+
+5. **Edit Transactions**
+
+   - As a user, I want to be able to edit the details of my existing transactions.
+
+6. **Delete Transactions**
+   - As a user, I want to delete transactions that are no longer relevant.
+
+### Similar Software
+
+While there are existing tools that provide Bitcoin price information, our application differentiates itself by focusing specifically on the arbitrage rates between the United States of America and South Africa. It offers a user-friendly interface for managing transactions and provides real-time data for informed decision-making.
+
+### Functional Requirements
+
+1. User Authentication
+
+   - Registration with unique username and password
+   - Secure login functionality
+
+2. Transaction Management
+
+   - Add new transactions with purchase price and date
+   - Edit existing transactions
+   - Delete transactions
+
+3. Real-time Arbitrage Rates
+   - Display current Bitcoin arbitrage rates
+
+### Non-functional Requirements
+
+1. **Performance**
+
+   - Application should load quickly and respond promptly to user actions.
+
+2. **Security**
+
+   - User authentication and transactions should be securely handled.
+   - Data encryption during transmission.
+
+3. **Scalability**
+
+   - The system should handle an increasing number of users and transactions without a significant decrease in performance.
+
+4. **Reliability**
+
+   - Ensure the application is available and reliable, minimizing downtime.
+
+5. **Compatibility**
+
+   - Support for major web browsers (Chrome, Firefox, Safari).
+
+6. **Usability**
+
+   - Intuitive user interface for easy navigation and understanding.
+
+7. **Maintainability**
+   - Codebase should be well-organized and documented for ease of maintenance.
+
+## Getting Started
+
+### Installation
+
+#### Prerequisites
+
+- Node.js and npm installed on your machine.
+- MongoDB installed and running.
+
+### Steps
+
+1. Clone the repository:
+
+   ```bash
+   git clone https://github.com/your-username/todo-list-app.git
+   cd todo-list-app
+
+   ```
+
+2. Install dependencies for both frontend and backend using `npm install`.
+3. Configure MongoDB connection. (For the Purposes of this task the DB URL & JWT Auth token will be provided)
+4. Run the application using `npm start` for both frontend and backend.
+5. Please note there are 3 folders that will be required to install and run this application
+
+### Enviroment Variables
+
+Please set your eveniroment variables. For the purposes of this task the URI and Secret Key will be provided.
+
+```bash
+MONGODB_URI=your_mongodb_uri
+JWT_SECRET_KEY=your_secret_key
+```
+
+### Security Measures
+
+User passwords are stored securely using bcrypt for hashing.
+JSON Web Tokens (JWT) are used for authentication.
+Environment variables are used for sensitive information like MongoDB URI and JWT secret key.
+
+### Third-Party APIs
+
+The application uses the following third-party APIs:
+
+Kraken API for fetching USD exchange rates. https://docs.kraken.com/rest/
+Luno API for fetching ZAR exchange rates. https://www.luno.com/en/developers/api
+
+### Deployment
+
+The application is deployed on Heroku. Both the front end and back end are deployed together to simplify the deployment process. This decision was made for ease of management and simplicity in handling a small-scale application.
+
+For a production deployment, consider securing sensitive information, implementing HTTPS, and other security best practices.
+
+## Deployment URL
