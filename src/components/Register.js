@@ -13,13 +13,16 @@ const Register = () => {
   //Function to handle to the registration of a user.
   const handleRegister = async () => {
     try {
-      await axios.post("http://localhost:5005/api/register", {
-        username,
-        password,
-      });
+      await axios.post(
+        "https://finaltask-server-950d32b6c3a7.herokuapp.com/api/register",
+        {
+          username,
+          password,
+        }
+      );
 
       const loginResponse = await axios.post(
-        "http://localhost:5005/api/login",
+        "https://finaltask-server-950d32b6c3a7.herokuapp.com/api/login",
         {
           username,
           password,

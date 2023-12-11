@@ -8,19 +8,23 @@ const ArbitrageComponent = () => {
 
   useEffect(() => {
     // Fetch Kraken price
-    fetch("http://localhost:5013/kraken-price")
+    fetch(
+      "https://final-pricing-server-accfd4e36d9a.herokuapp.com/kraken-price"
+    )
       .then((response) => response.json())
       .then((data) => setKrakenPrice(data.krakenPrice))
       .catch((error) => console.error("Error fetching Kraken price:", error));
 
     // Fetch Arbitrage rate
-    fetch("http://localhost:5013/arbitrage-rate")
+    fetch(
+      "https://final-pricing-server-accfd4e36d9a.herokuapp.com/arbitrage-rate"
+    )
       .then((response) => response.json())
       .then((data) => setArbitrageRate(data.arbitrageRate))
       .catch((error) => console.error("Error fetching Arbitrage rate:", error));
 
     // Fetch Luno price
-    fetch("http://localhost:5013/luno-price")
+    fetch("https://final-pricing-server-accfd4e36d9a.herokuapp.com/luno-price")
       .then((response) => response.json())
       .then((data) => setLunoPrice(data.lunoPrice))
       .catch((error) => console.error("Error fetching Luno price:", error));

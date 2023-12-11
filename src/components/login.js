@@ -21,10 +21,13 @@ const Login = () => {
   //Funtion to handle and redirect users login.
   const handleLogin = async () => {
     try {
-      const response = await axios.post("http://localhost:5005/api/login", {
-        username,
-        password,
-      });
+      const response = await axios.post(
+        "https://finaltask-server-950d32b6c3a7.herokuapp.com/api/login",
+        {
+          username,
+          password,
+        }
+      );
 
       const token = response.data.token;
       const decodedToken = jwtDecode(token);

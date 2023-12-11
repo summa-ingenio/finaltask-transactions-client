@@ -13,11 +13,14 @@ const UserList = () => {
   useEffect(() => {
     const fetchUsers = async () => {
       try {
-        const response = await axios.get("http://localhost:5005/api/users", {
-          headers: {
-            Authorization: token,
-          },
-        });
+        const response = await axios.get(
+          "https://finaltask-server-950d32b6c3a7.herokuapp.com/api/users",
+          {
+            headers: {
+              Authorization: token,
+            },
+          }
+        );
         setUsers(response.data);
       } catch (error) {
         console.error("Failed to fetch users", error);

@@ -13,7 +13,9 @@ const TodoList = () => {
   const fetchArbitrageRate = async () => {
     try {
       // Fetch the arbitrage rate from your endpoint
-      const response = await axios.get("http://localhost:5013/arbitrage-rate");
+      const response = await axios.get(
+        "https://final-pricing-server-accfd4e36d9a.herokuapp.com/arbitrage-rate"
+      );
       const arbitrageRate = parseFloat(response.data.arbitrageRate);
 
       return arbitrageRate.toFixed(2);
@@ -25,7 +27,9 @@ const TodoList = () => {
   const usdRate = async () => {
     try {
       // Fetch the USD rate from your endpoint
-      const response = await axios.get("http://localhost:5013/kraken-price");
+      const response = await axios.get(
+        "https://final-pricing-server-accfd4e36d9a.herokuapp.com/kraken-price"
+      );
       const usd = response.data.krakenPrice;
 
       return usd;
@@ -37,7 +41,9 @@ const TodoList = () => {
   const zarRate = async () => {
     try {
       // Fetch the ZAR rate from your endpoint
-      const response = await axios.get("http://localhost:5013/luno-price");
+      const response = await axios.get(
+        "https://final-pricing-server-accfd4e36d9a.herokuapp.com/luno-price"
+      );
       const zar = response.data.lunoPrice;
 
       return zar;
@@ -51,9 +57,12 @@ const TodoList = () => {
     // Fetch tasks from the server upon component mount
     const fetchTasks = async () => {
       try {
-        const response = await axios.get("http://localhost:5005/api/tasks", {
-          headers: { Authorization: localStorage.getItem("token") },
-        });
+        const response = await axios.get(
+          "https://finaltask-server-950d32b6c3a7.herokuapp.com/api/tasks",
+          {
+            headers: { Authorization: localStorage.getItem("token") },
+          }
+        );
 
         setTasks(response.data.tasks);
       } catch (error) {
@@ -97,7 +106,7 @@ const TodoList = () => {
       // Send request to add task with the Authorization header
       const token = localStorage.getItem("token");
       await axios.post(
-        "http://localhost:5005/api/addTask",
+        "https://finaltask-server-950d32b6c3a7.herokuapp.com/api/addTask",
         {
           task: newTask,
           currency: selectedCurrency,
@@ -110,9 +119,12 @@ const TodoList = () => {
       );
 
       // Fetch updated tasks after adding a new task
-      const response = await axios.get("http://localhost:5005/api/tasks", {
-        headers: { Authorization: token },
-      });
+      const response = await axios.get(
+        "https://finaltask-server-950d32b6c3a7.herokuapp.com/api/tasks",
+        {
+          headers: { Authorization: token },
+        }
+      );
 
       setTasks(response.data.tasks);
     } catch (error) {
@@ -137,7 +149,7 @@ const TodoList = () => {
 
       // Send request to edit task
       await axios.put(
-        `http://localhost:5005/api/editTask/${taskId}`,
+        `https://finaltask-server-950d32b6c3a7.herokuapp.com/api/editTask/${taskId}`,
         { task: updatedTask },
         { headers: { Authorization: localStorage.getItem("token") } }
       );
@@ -157,9 +169,12 @@ const TodoList = () => {
       const token = localStorage.getItem("token");
       console.log("Deleting task with ID:", taskId);
 
-      await axios.delete(`http://localhost:5005/api/removeTask/${taskId}`, {
-        headers: { Authorization: token },
-      });
+      await axios.delete(
+        `https://finaltask-server-950d32b6c3a7.herokuapp.com/api/removeTask/${taskId}`,
+        {
+          headers: { Authorization: token },
+        }
+      );
 
       console.log("Task deleted successfully");
     } catch (error) {
