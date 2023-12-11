@@ -1,8 +1,5 @@
 import React, { useState, useEffect } from "react";
 import "../pricing.css";
-const cors = require("cors");
-
-app.use(cors());
 
 const ArbitrageComponent = () => {
   const [krakenPrice, setKrakenPrice] = useState(null);

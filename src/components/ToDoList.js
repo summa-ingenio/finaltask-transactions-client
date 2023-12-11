@@ -3,9 +3,6 @@ import axios from "axios";
 import Navbar from "./MenuBar";
 import Arbitrage from "../components/arbitrage";
 import "../TodoList.css";
-const cors = require("cors");
-
-app.use(cors());
 
 const TodoList = () => {
   const [tasks, setTasks] = useState([]);

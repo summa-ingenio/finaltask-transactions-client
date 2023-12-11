@@ -5,9 +5,6 @@ import { Link } from "react-router-dom";
 import axios from "axios";
 import "../UserList.css";
 import Navbar from "./MenuBar";
-const cors = require("cors");
-
-app.use(cors());
 
 const UserList = () => {
   const [users, setUsers] = useState([]);
