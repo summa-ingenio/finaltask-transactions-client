@@ -4,6 +4,9 @@ import { jwtDecode } from "jwt-decode";
 import { useNavigate } from "react-router-dom";
 import "../Register.css";
 import Logo from "../images/bitcoin-logo.png";
+const cors = require("cors");
+
+app.use(cors());
 
 const Register = () => {
   const [username, setUsername] = useState("");

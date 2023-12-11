@@ -3,6 +3,9 @@ import axios from "axios";
 import { jwtDecode } from "jwt-decode";
 import { useNavigate } from "react-router-dom";
 import "../Login.css";
+const cors = require("cors");
+
+app.use(cors());
 
 const Login = () => {
   const [username, setUsername] = useState("");
