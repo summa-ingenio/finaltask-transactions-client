@@ -30,11 +30,11 @@ const UserList = () => {
     fetchUsers();
   }, [token]); // Include token as a dependency to re-fetch when it changes
 
-  // Function to handle user deletion
-  const handleDeleteUser = async (userId) => {
+  const handleDeleteUser = async (username) => {
     try {
+      // Make a DELETE request to delete the user
       await axios.delete(
-        `https://finaltask-server-950d32b6c3a7.herokuapp.com/api/users/${userId}`,
+        `https://finaltask-server-950d32b6c3a7.herokuapp.com/api/users/${username}`,
         {
           headers: {
             Authorization: token,
@@ -42,8 +42,18 @@ const UserList = () => {
         }
       );
 
-      // Update the users list after deletion
-      setUsers((prevUsers) => prevUsers.filter((user) => user._id !== userId));
+      // After successful deletion, fetch the updated user list
+      const updatedUsers = await axios.get(
+        "https://finaltask-server-950d32b6c3a7.herokuapp.com/api/users",
+        {
+          headers: {
+            Authorization: token,
+          },
+        }
+      );
+
+      // Update the local state with the new user list
+      setUsers(updatedUsers.data);
     } catch (error) {
       console.error("Failed to delete user", error);
     }
@@ -66,8 +76,8 @@ const UserList = () => {
               <tr key={user._id}>
                 <td>{user.username}</td>
                 <td>
-                  <button onClick={() => handleDeleteUser(user._id)}>
-                    Delete
+                  <button onClick={() => handleDeleteUser(user.username)}>
+                    Delete User
                   </button>
                 </td>
               </tr>
