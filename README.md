@@ -141,8 +141,10 @@ While there are existing tools that provide Bitcoin price information, our appli
 1. Clone the repository:
 
    ```bash
-   git clone https://github.com/your-username/todo-list-app.git
-   cd todo-list-app
+   git clone https://github.com/summa-ingenio/bitcoin-arbitrage
+   cd pricing server
+   cd transactions-client
+   cd transactions-sever
 
    ```
 
@@ -189,3 +191,5 @@ Username: caleb@gmail.com
 Password: test
 
 ## Deployment URL
+
+https://finaltask-client-139e56f14968.herokuapp.com/
